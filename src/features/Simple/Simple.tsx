@@ -1,9 +1,9 @@
 import type { NextPage } from "next/types";
 import { Button } from "../../components/Button";
-import Todo from "../../components/Todo";
+import { Todo } from "../../components/Todo";
 import { trpc } from "../../utils/trpc";
 
-const Simple: NextPage = () => {
+export const Simple: NextPage = () => {
   const todoArrayQuery = trpc.todo.getAllByUser.useQuery();
   const createRandomTodoMutation = trpc.todo.createRandom.useMutation({
     onSuccess: () => todoArrayQuery.refetch(),
@@ -33,5 +33,3 @@ const Simple: NextPage = () => {
     </main>
   );
 };
-
-export default Simple;

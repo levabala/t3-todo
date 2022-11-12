@@ -67,10 +67,8 @@ const TodoLine: React.FC<React.PropsWithChildren> = ({ children }) => (
   <div className="py-1">{children}</div>
 );
 
-const Todo = {
+export const Todo = {
   TodoContent,
   TodoContentEditable,
   TodoLine,
 };
-
-export default Todo;
